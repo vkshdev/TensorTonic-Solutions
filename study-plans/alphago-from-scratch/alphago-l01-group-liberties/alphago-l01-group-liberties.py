@@ -8,17 +8,14 @@ def go_group_liberties(board: list, row: int, col: int) -> tuple:
     board = np.array(board)
     color = board[row, col]
     n = board.shape[0]
-
     group = set()
     liberties = set()
     stack = [(row, col)]
-
     while stack:
         r, c = stack.pop()
         if (r, c) in group:
             continue
         group.add((r, c))
-
         for dr, dc in [(1,0), (-1,0), (0,1), (0,-1)]:
             nr, nc = r + dr, c + dc
             if 0 <= nr < n and 0 <= nc < n:
