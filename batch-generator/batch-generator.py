@@ -1,20 +1,20 @@
 import numpy as np
 
-def batch_generator(X, y, batch_size, rng=None, drop_last=False):
+def batch_generator(X: list, y: list, batch_size: int, seed: int = 42, drop_last: bool = False):
     """
-    Randomly shuffle a dataset and yield mini-batches (X_batch, y_batch).
+    Returns a generator of (X_batch, y_batch) tuples.
     """
     # Write code here
-
-    X, y = np.asarray(X), np.asarray(y)
-    if batch_size <= 0:
-        raise ValueError("batch size be > 0")
-    n = len(y)
+    
+    X = np.asarray(X)
+    y = np.asarray(y)
+    rng = np.random.default_rng(seed)
+    n = len(X)
     idx = np.arange(n)
-    idx = rng.permutation(idx) if rng is not None else np.random.permutation(idx)
-    for i in range(0, n, batch_size):
-        b = idx[i:i+batch_size]
-        if drop_last and len(b) < batch_size:
+    rng.shuffle(idx)
+    for start in range(0, n, batch_size):
+        end = start + batch_size
+        batch_idx = idx[start:end]
+        if drop_last and len(batch_idx) < batch_size:
             break
-        yield X[b], y[b]
-    pass
+        yield X[batch_idx], y[batch_idx]
