@@ -62,6 +62,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Compute Covariance Matrix | Compute a sample covariance matrix from centered observations, preserving feature-to-feature relationships. | https://www.tensortonic.com/problems/covariance-matrix |
 | Implement Cross-Entropy Loss | Compute multiclass cross-entropy loss from class probabilities and integer labels with stable logarithms. | https://www.tensortonic.com/problems/cross-entropy-loss |
 | Mixed-Precision Training Memory Accountant | Compute exact storage for parameters, gradients, saved activations, and optimizer state from tensor shapes and byte widths. | https://www.tensortonic.com/problems/cs336-l02-training-memory-accountant |
+| Compute Conditional Perplexity | Compute token-average negative log likelihood and perplexity only at target positions selected by a Boolean response mask. | https://www.tensortonic.com/problems/cs336-l12-conditional-perplexity |
 | Build an Assistant-Only SFT Loss Mask | Build a shifted supervised-fine-tuning loss mask that trains only on assistant tokens and ignores padding and controls. | https://www.tensortonic.com/problems/cs336-l15-assistant-only-sft-mask |
 | Cumulative Returns | Convert a sequence of periodic returns into cumulative compounded returns at every time-series position. | https://www.tensortonic.com/problems/cumulative-returns |
 | Cyclic Encoding | Encode periodic numeric features as sine and cosine coordinates using a specified cycle length. | https://www.tensortonic.com/problems/cyclic-encoding |
