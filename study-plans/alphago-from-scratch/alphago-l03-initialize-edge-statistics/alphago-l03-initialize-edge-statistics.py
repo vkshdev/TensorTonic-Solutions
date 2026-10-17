@@ -20,5 +20,4 @@ def initialize_mcts_edges(policy_logits: np.ndarray, legal_mask: np.ndarray) -> 
     Q = np.zeros_like(logits, dtype=np.float64)
     P = np.zeros_like(logits, dtype=np.float64)
     P[legal_idx] = probs
-
     return {"N": N, "W": W, "Q": Q, "P": P}
